@@ -15,10 +15,14 @@ function Nav({ id }) {
           <a href="/signup">Signup</a>
         </li>
         <li>
-          <button type="button">Buy Credits!</button>
+          <button type="button">
+            <h2>Buy Credits!</h2>
+          </button>
         </li>
         <li>
-          <button type="button">Credit Store</button>
+          <button type="button">
+            <h2>Credit Store</h2>
+          </button>
         </li>
       </ul>
     </header>

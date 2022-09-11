@@ -1,0 +1,121 @@
+:root {
+  --color1: #4baeae;
+  --color2: #0c5c84;
+  --color3: #003953;
+  --color4: #fccddd;
+  --color5: #d3dfe6;
+}
+
+* {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color4);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button {
+  background-color: var(--color4);
+  color: var(--color1);
+  font-weight: bold;
+  border-style: none;
+  border-radius: 5px;
+}
+
+h1 {
+  margin: 20px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin: 25px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#main-section {
+  background-color: var(--color4);
+  padding: 5% 15%;
+  min-height: 100vh;
+}
+
+#nav-section {
+  background-color: var(--color1);
+}
+
+#card-container {
+  box-shadow: 2px 2px 2px 2px var(--color3);
+  border-radius: 10px;
+}
+
+#post-create {
+  background-color: var(--color5);
+  border: 2px solid var(--color3);
+  border-radius: 10px;
+  padding: 5%;
+}
+
+#post-create textarea {
+  width: 100%;
+  height: 50px;
+}
+
+#post-create button {
+  float: right;
+  width: 25%;
+  background-color: var(--color1);
+  color: var(--color4);
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-style: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
