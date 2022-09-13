@@ -4,7 +4,10 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon",
+    "seed": "node seeders/seeds.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,17 @@
   "bugs": {
     "url": "https://github.com/quicksilver524/credible/issues"
   },
-  "homepage": "https://github.com/quicksilver524/credible#readme"
+  "homepage": "https://github.com/quicksilver524/credible#readme",
+  "dependencies": {
+    "apollo-server-express": "^3.10.2",
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1",
+    "faker": "^6.6.6",
+    "graphql": "^16.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
