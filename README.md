@@ -53,7 +53,7 @@ In order to install this project you must clone this project on to your local ma
 ![ss-1](images/ss-1.png)
 
 [Robert](https://https://github.com/robsquaadd)
-![ss-2](images/ss-22.png)
+![ss-2](images/ss-2.png)
 
 [Charissa](https://https://github.com/CharissaHollister)
 ![ss-3](images/ss-3.png)
