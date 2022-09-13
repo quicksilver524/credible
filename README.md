@@ -53,7 +53,7 @@ In order to install this project you must clone this project on to your local ma
 ![ss-1](images/ss-1.png)
 
 [Robert](https://https://github.com/robsquaadd)
-![ss-2](images/ss-2.png)
+![ss-2](images/ss-22.png)
 
 [Charissa](https://https://github.com/CharissaHollister)
 ![ss-3](images/ss-3.png)
@@ -62,13 +62,13 @@ In order to install this project you must clone this project on to your local ma
 ![ss-4](images/ss-4.png)
 
 [Courtney](https://https://github.com/courtcoder)
-![ss-5](images/ss-5.jpg)
+![ss-5](images/ss-5.png)
 
 ## Questions
 
 - If you have any further questions please feel free to contact us at:
-  [quicksilver524@gmail.com](quicksilver524@gmail.com);
-  [zlepeng@yahoo.com](zlepeng@yahoo.com);
-  [courtney1187@icloud.com](courtney1187@icloud.com);
-  [robert.collier.120@gmail.com](robert.collier.120@gmail.com);
-  [hollister.charissa@gmail.com](hollister.charissa@gmail.com)
+  1. [quicksilver524@gmail.com](quicksilver524@gmail.com)
+  2. [zlepeng@yahoo.com](zlepeng@yahoo.com)
+  3. [courtney1187@icloud.com](courtney1187@icloud.com)
+  4. [robert.collier.120@gmail.com](robert.collier.120@gmail.com)
+  5. [hollister.charissa@gmail.com](hollister.charissa@gmail.com)
