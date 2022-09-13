@@ -49,21 +49,26 @@ In order to install this project you must clone this project on to your local ma
 
 ## Created-by
 
-[Jeremy](https://github.com/quicksilver524) - ![ss-1](images/ss-1.png)
+[Jeremy](https://github.com/quicksilver524)
+![ss-1](images/ss-1.png)
 
-[Robert](https://https://github.com/robsquaadd) - ![ss-2](images/ss-2.png)
+[Robert](https://https://github.com/robsquaadd)
+![ss-2](images/ss-2.png)
 
-[Charissa](https://https://github.com/CharissaHollister) - ![ss-3](images/ss-3.png)
+[Charissa](https://https://github.com/CharissaHollister)
+![ss-3](images/ss-3.png)
 
-[Lepeng Z.](https://github.com/goforward-z) - ![ss-4](images/ss-4.png)
+[Lepeng Z.](https://github.com/goforward-z)
+![ss-4](images/ss-4.png)
 
-[Courtney](https://https://github.com/courtcoder) - ![ss-5](images/ss-5.jpg)
+[Courtney](https://https://github.com/courtcoder)
+![ss-5](images/ss-5.jpg)
 
 ## Questions
 
 - If you have any further questions please feel free to contact us at:
-  [quicksilver524@gmail.com](quicksilver524@gmail.com)
-  [zlepeng@yahoo.com](zlepeng@yahoo.com)
-  [courtney1187@icloud.com](courtney1187@icloud.com)
-  [robert.collier.120@gmail.com](robert.collier.120@gmail.com)
+  [quicksilver524@gmail.com](quicksilver524@gmail.com);
+  [zlepeng@yahoo.com](zlepeng@yahoo.com);
+  [courtney1187@icloud.com](courtney1187@icloud.com);
+  [robert.collier.120@gmail.com](robert.collier.120@gmail.com);
   [hollister.charissa@gmail.com](hollister.charissa@gmail.com)
