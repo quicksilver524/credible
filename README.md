@@ -67,8 +67,8 @@ In order to install this project you must clone this project on to your local ma
 ## Questions
 
 - If you have any further questions please feel free to contact us at:
-  1. [quicksilver524@gmail.com](quicksilver524@gmail.com)
-  2. [zlepeng@yahoo.com](zlepeng@yahoo.com)
-  3. [courtney1187@icloud.com](courtney1187@icloud.com)
-  4. [robert.collier.120@gmail.com](robert.collier.120@gmail.com)
-  5. [hollister.charissa@gmail.com](hollister.charissa@gmail.com)
+  1. Jeremy [quicksilver524@gmail.com](quicksilver524@gmail.com)
+  2. Lepeng [zlepeng@yahoo.com](zlepeng@yahoo.com)
+  3. Courtney [courtney1187@icloud.com](courtney1187@icloud.com)
+  4. Robert [robert.collier.120@gmail.com](robert.collier.120@gmail.com)
+  5. Charissa [hollister.charissa@gmail.com](hollister.charissa@gmail.com)
