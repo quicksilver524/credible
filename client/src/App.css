@@ -74,7 +74,7 @@ li {
 
 #main-section {
   background-color: var(--color4);
-  padding: 5% 15%;
+  padding: 3% 15%;
   min-height: 100vh;
 }
 
@@ -82,9 +82,11 @@ li {
   background-color: var(--color1);
 }
 
-#card-container {
+.card-container {
   box-shadow: 2px 2px 2px 2px var(--color3);
   border-radius: 10px;
+  margin-top: 3%;
+  background-color: var(--color5);
 }
 
 #post-create {
@@ -99,7 +101,7 @@ li {
   height: 50px;
 }
 
-#post-create button {
+.post-create-btn {
   float: right;
   width: 25%;
   background-color: var(--color1);
@@ -109,6 +111,21 @@ li {
   margin-top: 1%;
   margin-bottom: 1%;
   border-style: none;
+}
+
+.credit-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.store-container {
+  display: inline-block;
+  width: 20%;
+  margin: 2.5%;
+}
+
+.credit-purchase-card {
+  height: 50px;
 }
 
 @keyframes App-logo-spin {
