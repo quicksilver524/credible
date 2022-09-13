@@ -1,9 +1,9 @@
-- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=quicksilver524)](https://github.com/quicksilver524/credible)
 - ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/quicksilver524/credible)
   ![GitHub issues](https://img.shields.io/github/issues/quicksilver524/credible)
   ![YouTube Video Views]()
+- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=quicksilver524)](https://github.com/quicksilver524/credible)
 
-                                                                # Credible
+# Credible
 
 ## Description
 
