@@ -2,6 +2,7 @@ import "./App.css";
 import Nav from "./components/Nav";
 import PostCreate from './components/PostCreate'
 import Post from './components/Post'
+import Store from './components/Store'
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <Nav id="nav-section" />
       <main id="main-section">
         <PostCreate />
-        {/* <Post /> */}
+        <Post />
+        <Store />
       </main>
     </div>
   );

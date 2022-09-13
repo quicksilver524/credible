@@ -2,10 +2,10 @@ import React from "react";
 
 function PostCreate() {
   return (
-    <div id="card-container">
+    <div className="card-container">
       <div id="post-create">
         <textarea placeholder="Post Text Here!"></textarea>
-        <button type="submit" id="post-create-btn">
+        <button type="submit" className="post-create-btn">
           <h2>Post</h2>
         </button>
       </div>
