@@ -2,9 +2,13 @@
   "name": "flex-to-the-left",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,5 +20,22 @@
   "bugs": {
     "url": "https://github.com/quicksilver524/credible/issues"
   },
-  "homepage": "https://github.com/quicksilver524/credible#readme"
+  "homepage": "https://github.com/quicksilver524/credible#readme",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.10.2",
+    "appollo": "^0.1.13",
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1",
+    "faker": "^6.6.6",
+    "graphql": "^16.6.0",
+    "jest": "^29.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "mongoose": "^6.6.0",
+    "react": "^18.2.0"
+  }
 }
