@@ -57,7 +57,7 @@ In order to install this project you must clone this project on to your local ma
 
 [Lepeng Z.](https://github.com/goforward-z) - ![ss-4](images/ss-4.png)
 
-[Courtney](https://https://github.com/courtcoder) - ![ss-5](images/ss-5.png)
+[Courtney](https://https://github.com/courtcoder) - ![ss-5](images/ss-5.jpg)
 
 ## Questions
 
