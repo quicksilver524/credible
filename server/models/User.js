@@ -20,10 +20,21 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
+    points:{
+        type: Number,
+        required: true,
+        default: 10
+    },
     thoughts: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Thought'
+      }
+    ],
+    likes: [
+      {
+          type: Schema.Types.ObjectId,
+          ref: 'Thought'
       }
     ],
     friends: [
@@ -57,6 +68,14 @@ userSchema.methods.isCorrectPassword = async function(password) {
 
 userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
+});
+
+userSchema.virtual('likeCount').get(function() {
+    return this.likes.length;
+});
+
+userSchema.virtual('thoughtsCount').get(function() {
+    return this.thoughts.length;
 });
 
 const User = model('User', userSchema);
