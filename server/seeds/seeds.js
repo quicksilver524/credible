@@ -71,6 +71,21 @@ db.once('open', async () => {
             { runValidators: true }
         );
     }
+    // create likes to earn points
+    for (let i = 0; i < 100; i += 1) {
+
+        const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
+        const { _id: userId } = createdUsers.ops[randomUserIndex];
+
+        const randomThoughtIndex = Math.floor(Math.random() * createdThoughts.length);
+        const { _id: thoughtId } = createdThoughts[randomThoughtIndex];
+
+        await Thought.updateOne(
+            { _id: thoughtId },
+            { $push: { likes: userId._id } } ,
+            { runValidators: true }
+        );
+    }
 
 
     console.log('all done!');
