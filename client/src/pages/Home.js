@@ -1,7 +1,7 @@
 import React from "react";
-import PostCreate from "./components/PostCreate";
-import Post from "./components/Post";
-import Store from "./components/Store";
+import PostCreate from "../components/PostCreate";
+import Post from "../components/Post";
+import Store from "../components/Store";
 
 import Auth from "../utils/auth";
 // import { useQuery } from "@apollo/client";
@@ -13,7 +13,7 @@ const Home = () => {
   //   const { data: userData } = useQuery(QUERY_ME_BASIC);
   //   const thoughts = data?.thoughts || [];
 
-  const loggedIn = Auth.loggedIn();
+  const loggedIn = true;
 
   return (
     <main>
@@ -27,15 +27,12 @@ const Home = () => {
           {/* {loading ? (
             <div>Loading...</div>
           ) : ( */}
-          <Post
-          //   thoughts={thoughts}
-          //   title="Some Feed for Thought(s)..."
-          />
+          <Post />
           {/* )} */}
         </div>
         {/* {loggedIn && userData ? ( */}
-        //todo ^ either use just loggedin if no query method or both if doing
-        queries
+        {/* //todo ^ either use just loggedin if no query method or both if doing
+        queries */}
         <div>
           <Store />
         </div>
