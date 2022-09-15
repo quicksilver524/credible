@@ -23,7 +23,8 @@ const userSchema = new Schema(
     points:{
         type: Number,
         required: true,
-        default: 10
+        default: 10,
+        min: 0
     },
     thoughts: [
       {
