@@ -15,11 +15,10 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 // import NoMatch from "./pages/NoMatch";
-//todo ^ update if prefer a nomatch instead of signup like I made it 
+//todo ^ update if prefer a nomatch instead of signup like I made it
 import Signup from "./pages/Signup";
 
 const httpLink = createHttpLink({
@@ -52,12 +51,12 @@ function App() {
               {/* <PostCreate />
               <Post />
               <Store /> */}
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="*" element={<Signup />} />
+              {/* <Route path="/signup" element={<Signup />} /> */}
+              {/* <Route path="/login" element={<Login />} /> */}
+              {/* <Route path="*" element={<Signup />} /> */}
             </Routes>
           </main>
-          <Footer id="footer-section" />
+          {/* <Footer id="footer-section" /> */}
         </div>
       </Router>
     </ApolloProvider>
