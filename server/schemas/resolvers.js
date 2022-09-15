@@ -1,4 +1,4 @@
-const { AuthenticationError } = require('apollo-server-express');
+const {AuthenticationError, ForbiddenError} = require('apollo-server-express');
 const { User, Thought } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -64,9 +64,16 @@ const resolvers = {
       if (context.user) {
         const thought = await Thought.create({ ...args, username: context.user.username });
 
+        let user = await User.findById(context.user._id);
+        if (!user.points) {
+          throw new ForbiddenError('points not enough, must >= 1');
+        }
+
+
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { thoughts: thought._id } },
+            //after created a post ,lose 1 ppoint
+            {$push: {thoughts: thought._id,}, $inc: {points: -1}},
           { new: true }
         );
 
@@ -75,6 +82,53 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
+
+    likeThought: async (parent, { thoughtId }, context) => {
+      if (context.user) {
+
+        // add user who clicled like
+        const thought = await Thought.findOneAndUpdate(
+            {_id: thoughtId},
+            {$addToSet: {likes: context.user._id}},
+            {new: true, runValidators: true}
+        );
+
+        // add 1 point
+        await User.findOneAndUpdate(
+            {username: thought.username},
+            // liked post，point + 1
+            {$inc: {points: 1}}
+        );
+
+        return thought;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    dislikeThought: async (parent, { thoughtId }, context) => {
+      if (context.user) {
+
+        const thought = await Thought.findOneAndUpdate(
+            {_id: thoughtId},
+            {$addToSet: {dislikes: context.user._id}},
+            {new: true, runValidators: true}
+        );
+
+        // points - 1
+        await User.findOneAndUpdate(
+            {username: thought.username},
+            // user:point - 1
+            {$inc: {points: -1}},
+            { new: true }
+        );
+
+        return thought;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
     addReaction: async (parent, { thoughtId, reactionBody }, context) => {
       if (context.user) {
         const updatedThought = await Thought.findOneAndUpdate(

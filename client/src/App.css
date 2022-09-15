@@ -128,6 +128,11 @@ li {
   height: 50px;
 }
 
+#signup-form {
+  background-color: black;
+  z-index: 99;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -2,6 +2,7 @@ const faker = require('faker');
 
 const db = require('../config/connection');
 const { Thought, User } = require('../models');
+const bcrypt = require('bcrypt');
 
 db.once('open', async () => {
     await Thought.deleteMany({});
@@ -13,9 +14,14 @@ db.once('open', async () => {
     for (let i = 0; i < 50; i += 1) {
         const username = faker.internet.userName();
         const email = faker.internet.email(username);
-        const password = faker.internet.password();
+        //const password = faker.internet.password();
+        const password = 'password';
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-        userData.push({ username, email, password, points: 10 });
+        //set default password for every user, and password is :'password'
+
+        userData.push({ username, email, password:hashedPassword, points: 10 });
     }
 
     const createdUsers = await User.collection.insertMany(userData);
