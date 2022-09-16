@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Grid, Button, Form, Image, Modal } from "semantic-ui-react";
-import LoginImage from "../images/LoginImage1.jpg";
+import LoginImage from "../images/incredibles.jpg";
 
 function LoginModal() {
   const [open, setOpen] = React.useState(false);
