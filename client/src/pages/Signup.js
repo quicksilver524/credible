@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { validateEmail } from "../utils/helpers";
+import Login from "../components/Login";
 
 function Signup() {
   const [formState, setFormState] = useState({
@@ -54,6 +55,11 @@ function Signup() {
           sign up!
         </button>
       </form>
+      <Login id="log-in-button" />
+      {/* <button type="submit" id="log-in-button">
+        Already A Friend - Login!
+        {/* put in code to pop up login modal if they click this  */}
+      {/* </button> */}
     </div>
   );
 }
