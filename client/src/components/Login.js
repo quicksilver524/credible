@@ -11,7 +11,7 @@ function ModalExampleModal() {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Button>Show Modal</Button>}
+      trigger={<Button>Already A Friend - Login!</Button>}
     >
       <Modal.Header>Select a Photo</Modal.Header>
       <Modal.Content image>
