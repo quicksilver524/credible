@@ -1,9 +1,9 @@
 //teesting semantic ui modal
 
 import React from "react";
-import { Button, Header, Image, Modal } from "semantic-ui-react";
+import { Button, Form, Image, Modal } from "semantic-ui-react";
 
-function ModalExampleModal() {
+function LoginModal() {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -13,24 +13,22 @@ function ModalExampleModal() {
       open={open}
       trigger={<Button>Already A Friend - Login!</Button>}
     >
-      <Modal.Header>Select a Photo</Modal.Header>
+      <Modal.Header>Login</Modal.Header>
       <Modal.Content image>
         <Image size="medium" src="/images/avatar/large/rachel.png" wrapped />
         {/* ^update to what we want */}
         <Modal.Description>
-          <Header>Default Profile Image</Header>
-          <p>
-            We've found the following gravatar image associated with your e-mail
-            address.
-          </p>
-          <p>Is it okay to use this photo?</p>
+          <Form>
+            <Form.Input fluid label="Email" type="email" placeholder="Email" />
+            <Form.Input label="Enter Password" type="password" />
+          </Form>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button color="black" onClick={() => setOpen(false)}>
+        <Button type="submit" color="black" onClick={() => setOpen(false)}>
           Nope
         </Button>
-        <Button
+        <Form.Button
           content="Yep, that's me"
           labelPosition="right"
           icon="checkmark"
@@ -42,4 +40,4 @@ function ModalExampleModal() {
   );
 }
 
-export default ModalExampleModal;
+export default LoginModal;
