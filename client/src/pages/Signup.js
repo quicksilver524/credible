@@ -49,7 +49,7 @@ function Signup() {
 
   return (
     <div id="signup-container">
-      <form id="signup-form" onSubmit={handleFormSubmit}>
+      <form onSubmit={handleFormSubmit} id="signup-form">
         <label for="username">username: </label>
         <input
           name="username"
