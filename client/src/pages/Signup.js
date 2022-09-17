@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { validateEmail } from "../utils/helpers";
 import Login from "../components/Login";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
+
+import AuthService from "../utils/auth";
 
 function Signup() {
   const [formState, setFormState] = useState({
@@ -20,7 +24,7 @@ function Signup() {
       }
     } else {
       if (!e.target.value.length) {
-        setFormErrorMessage(`${e.targe.name} is required!`);
+        setFormErrorMessage(`${e.target.name} is required!`);
       } else {
         setFormState(...formState, { [e.target.name]: e.target.value });
       }
@@ -56,10 +60,7 @@ function Signup() {
         </button>
       </form>
       <Login id="log-in-button" />
-      {/* <button type="submit" id="log-in-button">
-        Already A Friend - Login!
-        {/* put in code to pop up login modal if they click this  */}
-      {/* </button> */}
+{/* login functionality is in the login component  */}
     </div>
   );
 }

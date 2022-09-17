@@ -31,7 +31,7 @@ function Nav({ id }) {
         </li>
         <li>
           <a href="/signout">Sign Out</a>
-          {/* todo fix to be evnt listener sign out functionality */}
+          {/* todo fix to be event listener sign out functionality */}
         </li>
         <li>
           <button type="button">

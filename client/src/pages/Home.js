@@ -2,6 +2,7 @@ import React from "react";
 import PostCreate from "../components/PostCreate";
 import Post from "../components/Post";
 import Store from "../components/Store";
+import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import AuthService from "../utils/auth";
 import { Navigate } from "react-router-dom";
@@ -30,21 +31,14 @@ const Home = () => {
             <PostCreate />
           </div>
           <div className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}>
-            {/* {loading ? (
-              <div>Loading...</div>
-            ) : ( */}
             <Post />
-            {/* )} */}
           </div>
-          {/* {loggedIn && userData ? ( */}
-          {/* //todo ^ either use just loggedin if no query method or both if doing
-          queries */}
           <div>
             <Store />
           </div>
-          {/* ) : null} */}
         </div>
       </main>
+      <Footer id="footer-section" />
     </div>
   );
 };
