@@ -26,7 +26,7 @@ function LoginModal(props) {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log("handleformsubmit clicked");
+    // console.log("handleformsubmit clicked");
     try {
       const { data } = await login({
         variables: { ...formState },

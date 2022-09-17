@@ -15,6 +15,7 @@ function Signup() {
   const [formErrorMessage, setFormErrorMessage] = useState("");
   const [addUser, { error }] = useMutation(ADD_USER);
   function handleInputChange(e) {
+    console.log("handle change activated")
     if (e.target.name === "signup-email") {
       const isValid = validateEmail(e.target.value);
       if (!isValid) {
@@ -35,7 +36,7 @@ function Signup() {
   // submit form
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+console.log("handleformsubmit signup clicked");
     try {
       const { data } = await addUser({
         variables: { ...formState },

@@ -1,13 +1,15 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_POSTS = gql`
-  query posts($username: String) {
-    posts(username: $username) {
+  query thoughts($username: String) {
+    thoughts(username: $username) {
       _id
-      postText
+      thoughtText
       createdAt
       username
       reactionCount
+      likeCount
+      dislikeCount
       reactions {
         _id
         createdAt
@@ -26,6 +28,8 @@ export const QUERY_POST = gql`
       createdAt
       username
       reactionCount
+      likeCount
+      dislikeCount
       reactions {
         _id
         createdAt
@@ -52,6 +56,8 @@ export const QUERY_USER = gql`
         thoughtText
         createdAt
         reactionCount
+        likeCount
+        dislikeCount
       }
     }
   }
@@ -69,6 +75,8 @@ export const QUERY_ME = gql`
         thoughtText
         createdAt
         reactionCount
+        likeCount
+        dislikeCount
         reactions {
           _id
           createdAt
