@@ -8,7 +8,7 @@ import AuthService from "../utils/auth";
 
 function Signup() {
   const [formState, setFormState] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
@@ -74,11 +74,11 @@ function Signup() {
           placeholder="password"
           onBlur={handleInputChange}
         />
-        {error && <p>error: {formErrorMessage}</p>}
         <button type="submit" id="sign-up-button">
           sign up!
         </button>
       </form>
+      {error && <p>error: {formErrorMessage}</p>}
       <Login id="log-in-button" />
       {/* note: login functionality is in the login component  */}
     </div>
