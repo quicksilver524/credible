@@ -13,6 +13,7 @@ function Signup() {
     password: "",
   });
   const [formErrorMessage, setFormErrorMessage] = useState("");
+  const [addUser, { error }] = useMutation(ADD_USER);
   function handleInputChange(e) {
     if (e.target.name === "signup-email") {
       const isValid = validateEmail(e.target.value);
@@ -30,9 +31,25 @@ function Signup() {
       }
     }
   }
+
+  // submit form
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      AuthService.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div id="signup-container">
-      <form id="signup-form">
+      <form id="signup-form" onSubmit={handleFormSubmit}>
         <label for="signup-username">username: </label>
         <input
           id="signup-username"
@@ -54,13 +71,13 @@ function Signup() {
           placeholder="password"
           onBlur={handleInputChange}
         />
-        <p>error: {formErrorMessage}</p>
+        {error && <p>error: {formErrorMessage}</p>}
         <button type="submit" id="sign-up-button">
           sign up!
         </button>
       </form>
       <Login id="log-in-button" />
-{/* login functionality is in the login component  */}
+      {/* login functionality is in the login component  */}
     </div>
   );
 }
