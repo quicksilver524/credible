@@ -5,28 +5,28 @@ import { ADD_POST } from "../utils/mutations";
 import { QUERY_POSTS, QUERY_ME } from "../utils/queries";
 
 const PostCreate = () => {
-  const [postText, setText] = useState("");
+  const [thoughtText, setText] = useState("");
   // const [characterCount, setCharacterCount] = useState(0);
 
-  const [addPost, { error }] = useMutation(ADD_POST, {
-    update(cache, { data: { addPost } }) {
+  const [addThought, { error }] = useMutation(ADD_POST, {
+    update(cache, { data: { addThought } }) {
       // could potentially not exist yet, so wrap in a try/catch
       try {
         // update me array's cache
         const { me } = cache.readQuery({ query: QUERY_ME });
         cache.writeQuery({
           query: QUERY_ME,
-          data: { me: { ...me, posts: [...me.posts, addPost] } },
+          data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
         });
       } catch (e) {
         console.warn("First Post insertion by user!");
       }
 
       // update thought array's cache
-      const { posts } = cache.readQuery({ query: QUERY_POSTS });
+      const { thoughts } = cache.readQuery({ query: QUERY_POSTS });
       cache.writeQuery({
         query: QUERY_POSTS,
-        data: { posts: [addPost, ...posts] },
+        data: { thoughts: [addThought, ...thoughts] },
       });
     },
   });
@@ -45,8 +45,8 @@ const PostCreate = () => {
     event.preventDefault();
 
     try {
-      await addPost({
-        variables: { postText },
+      await addThought({
+        variables: { thoughtText },
       });
 
       // clear form value
@@ -63,7 +63,7 @@ const PostCreate = () => {
           <textarea
             placeholder="Post Text Here!"
             onChange={handleChange}
-            value={postText}
+            value={thoughtText}
             className="thought-text-input"
           ></textarea>
           <button type="submit" className="post-create-btn">
