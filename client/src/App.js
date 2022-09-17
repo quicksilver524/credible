@@ -1,6 +1,6 @@
 import "./App.css";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+// import Nav from "./components/Nav";
+// import Footer from "./components/Footer";
 // import PostCreate from "./components/PostCreate";
 // import Post from "./components/Post";
 // import Store from "./components/Store";

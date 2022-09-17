@@ -1,8 +1,8 @@
-//teesting semantic ui modal
+//testing semantic ui modal
 
 import React from "react";
 import { Grid, Button, Form, Image, Modal } from "semantic-ui-react";
-import LoginImage from "../images/incredibles.jpeg";
+import LoginImage from "../images/LoginImage.jpeg";
 
 function LoginModal() {
   const [open, setOpen] = React.useState(false);

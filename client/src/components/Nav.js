@@ -1,7 +1,25 @@
 import React from "react";
+import AuthService from "../utils/auth";
 
 function Nav({ id }) {
   // const [yourMom] = useState("yo mama");
+  const loggedIn = AuthService.loggedIn();
+
+  if (!loggedIn) {
+    return (
+      <header id={id}>
+        <a href="/">
+          <h1>credible</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/signup">Signup</a>
+          </li>
+        </ul>
+      </header>
+    );
+  }
+
   return (
     <header id={id}>
       <a href="/">
@@ -12,7 +30,8 @@ function Nav({ id }) {
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/signup">Signup</a>
+          <a href="/signout">Sign Out</a>
+          {/* todo fix to be evnt listener sign out functionality */}
         </li>
         <li>
           <button type="button">
