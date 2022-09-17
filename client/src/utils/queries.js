@@ -19,7 +19,6 @@ export const QUERY_POSTS = gql`
     }
   }
 `;
-
 export const QUERY_POST = gql`
   query thought($id: ID!) {
     thought(_id: $id) {
@@ -39,7 +38,6 @@ export const QUERY_POST = gql`
     }
   }
 `;
-
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
@@ -62,7 +60,6 @@ export const QUERY_USER = gql`
     }
   }
 `;
-
 export const QUERY_ME = gql`
   {
     me {

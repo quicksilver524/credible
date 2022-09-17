@@ -62,9 +62,9 @@ const PostCreate = () => {
         <form onSubmit={handleFormSubmit}>
           <textarea
             placeholder="Post Text Here!"
-            onChange={handleChange}
             value={thoughtText}
-            className="thought-text-input"
+            className="form-input thought-text-input"
+            onChange={handleChange}
           ></textarea>
           <button type="submit" className="post-create-btn">
             <h2>Post</h2>
