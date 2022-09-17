@@ -50,24 +50,27 @@ function Signup() {
   return (
     <div id="signup-container">
       <form id="signup-form" onSubmit={handleFormSubmit}>
-        <label for="signup-username">username: </label>
+        <label for="username">username: </label>
         <input
-          id="signup-username"
-          name="signup-username"
+          name="username"
+          type="username"
+          id="username"
           placeholder="username"
           onBlur={handleInputChange}
         />
-        <label for="signup-email">email: </label>
+        <label for="email">email: </label>
         <input
-          id="signup-email"
-          name="signup-email"
+          name="email"
+          type="email"
+          id="email"
           placeholder="email"
           onBlur={handleInputChange}
         />
-        <label for="signup-password">password: </label>
+        <label for="password">password: </label>
         <input
-          id="singup-password"
-          name="signup-password"
+          name="password"
+          type="password"
+          id="password"
           placeholder="password"
           onBlur={handleInputChange}
         />
@@ -77,7 +80,7 @@ function Signup() {
         </button>
       </form>
       <Login id="log-in-button" />
-      {/* login functionality is in the login component  */}
+      {/* note: login functionality is in the login component  */}
     </div>
   );
 }
