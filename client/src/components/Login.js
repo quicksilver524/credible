@@ -26,24 +26,23 @@ function LoginModal(props) {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log("handleformsubmit clicked");
     try {
       const { data } = await login({
         variables: { ...formState },
       });
 
       AuthService.login(data.login.token);
+      setOpen(false);
     } catch (e) {
       console.error(e);
     }
 
     // clear form values
-    setFormState({
-      email: "",
-      password: "",
-    });
-
-    setOpen(false);
+    // setFormState({
+    //   email: "",
+    //   password: "",
+    // });
   };
 
   return (
@@ -56,8 +55,8 @@ function LoginModal(props) {
       <Modal.Header>Login</Modal.Header>
       <Modal.Content image>
         <Image size="medium" src={LoginImage} wrapped />
-        <Modal.Description>
-          <Form>
+        <Form onSubmit={handleFormSubmit}>
+          <Modal.Description>
             <Form.Input
               fluid
               label="Email"
@@ -77,31 +76,35 @@ function LoginModal(props) {
               value={formState.password}
               onChange={handleChange}
             />
-          </Form>
-        </Modal.Description>
+          </Modal.Description>
+
+          <Modal.Actions>
+            <Grid columns={2} relaxed="very">
+              <Grid.Column floated="left" width={4}>
+                <Button
+                  type="submit"
+                  color="black"
+                  onClick={() => setOpen(false)}
+                >
+                  I'm Not Credible
+                </Button>
+              </Grid.Column>
+              <Grid.Column floated="right" width={5}>
+                <Form.Button
+                  content="Yep, that's me"
+                  labelPosition="right"
+                  icon="checkmark"
+                  type="submit"
+                  // onClick={() => setOpen(false)}
+                  positive
+                />
+              </Grid.Column>
+            </Grid>
+            {error && <div>Login failed</div>}
+            {/* is this error in the right spot?  */}
+          </Modal.Actions>
+        </Form>
       </Modal.Content>
-      <Modal.Actions>
-        <Grid columns={2} relaxed="very">
-          <Grid.Column floated="left" width={4}>
-            <Button type="submit" color="black" onClick={() => setOpen(false)}>
-              I'm Not Credible
-            </Button>
-          </Grid.Column>
-          <Grid.Column floated="right" width={5}>
-            <Form.Button
-              content="Yep, that's me"
-              labelPosition="right"
-              icon="checkmark"
-              type="submit"
-              onSubmit={handleFormSubmit}
-              // onClick={(() => setOpen(false))}
-              positive
-            />
-          </Grid.Column>
-        </Grid>
-        {error && <div>Login failed</div>}
-        {/* is this error in the right spot?  */}
-      </Modal.Actions>
     </Modal>
   );
 }
