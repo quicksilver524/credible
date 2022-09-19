@@ -14,12 +14,13 @@ const PostCreate = () => {
       try {
         // update me array's cache
         const { me } = cache.readQuery({ query: QUERY_ME });
+        console.log(me, cache);
         cache.writeQuery({
           query: QUERY_ME,
           data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
         });
       } catch (e) {
-        console.warn("First Post insertion by user!");
+        console.warn(e);
       }
 
       // update thought array's cache
@@ -30,6 +31,8 @@ const PostCreate = () => {
       });
     },
   });
+
+  // console.log(error);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -70,7 +73,7 @@ const PostCreate = () => {
             <h2>Post</h2>
           </button>
         </form>
-        {error && <div>Post failed</div>}
+        {error && <div>{error.message}</div>}
       </div>
     </div>
   );

@@ -7,14 +7,14 @@ import Nav from "../components/Nav";
 import AuthService from "../utils/auth";
 import { Navigate } from "react-router-dom";
 
-// import { useQuery } from "@apollo/client";
-// import { QUERY_THOUGHTS, QUERY_ME_BASIC } from "../utils/queries";
-//todo ^ if we want to do query based loading of posts
+import { useQuery } from "@apollo/client";
+import { QUERY_ME, QUERY_POSTS } from "../utils/queries";
 
 const Home = () => {
-  //   const { loading, data } = useQuery(QUERY_THOUGHTS);
-  //   const { data: userData } = useQuery(QUERY_ME_BASIC);
-  //   const thoughts = data?.thoughts || [];
+  const { data } = useQuery(QUERY_POSTS);
+  const { data: userData } = useQuery(QUERY_ME);
+  const thoughts = data?.thoughts || [];
+  console.log(thoughts, userData);
 
   const loggedIn = AuthService.loggedIn();
 
