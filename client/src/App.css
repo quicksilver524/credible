@@ -147,6 +147,15 @@ li {
   height: 50px;
 } */
 
+#sign-up-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/signupBackground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 90%;
+}
 #signup-container {
   padding: 50px;
   width: fit-content;
@@ -180,7 +189,7 @@ li {
   opacity: 80%;
   color: black;
   font-size: large;
-  min-width:200px;
+  min-width: 200px;
 }
 
 @keyframes App-logo-spin {

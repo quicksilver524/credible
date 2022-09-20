@@ -1,24 +1,32 @@
 import React from "react";
 import AuthService from "../utils/auth";
+import { Modal, Icon } from "semantic-ui-react";
 
 function Nav({ id }) {
+  const [open, setOpen] = React.useState(false);
   // const [yourMom] = useState("yo mama");
-  const loggedIn = AuthService.loggedIn();
+  // const loggedIn = AuthService.loggedIn();
 
-  if (!loggedIn) {
-    return (
-      <header id={id}>
-        <a href="/">
-          <h1>credible</h1>
-        </a>
-        <ul>
-          <li>
-            <a href="/signup">Signup</a>
-          </li>
-        </ul>
-      </header>
-    );
-  }
+  // if (!loggedIn) {
+  //   return (
+  //     <header id={id}>
+  //       <a href="/">
+  //         <h1>credible</h1>
+  //       </a>
+  //       <ul>
+  //         <li>
+  //           <a href="/signup">Signup</a>
+  //         </li>
+  //       </ul>
+  //     </header>
+  //   );
+  // }
+
+  const navOut = async (event) => {
+    event.preventDefault();
+    setOpen(false);
+    AuthService.logout();
+  };
 
   return (
     <header id={id}>
@@ -26,12 +34,24 @@ function Nav({ id }) {
         <h1>credible</h1>
       </a>
       <ul>
-        <li>
+        {/* <li>
           <a href="/">Home</a>
-        </li>
+        </li> */}
         <li>
-          <a href="/signout">Sign Out</a>
-          {/* todo fix to be event listener sign out functionality */}
+          <Modal
+            onClose={() => {
+              navOut();
+            }}
+            onOpen={() => setOpen(true)}
+            open={open}
+            size="small"
+            trigger={<p>Sign Out</p>}
+          >
+            <Modal.Content>
+              see you again soon!
+              <span>{<Icon name="close" onClick={navOut} />}</span>
+            </Modal.Content>
+          </Modal>
         </li>
         <li>
           <button type="button">

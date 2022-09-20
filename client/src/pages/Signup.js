@@ -51,51 +51,59 @@ function Signup() {
   };
 
   return (
-    <div id="signup-container">
-      <Form container stackable onSubmit={handleFormSubmit} id="signup-form">
-        <Form.Group widths="spread-evenly">
-          <Form.Field>
-            <label for="username">username: </label>
-            <input
-              class="signup-input"
-              name="username"
-              type="text"
-              id="username"
-              placeholder="username"
-              onBlur={handleInputChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label for="email">email: </label>
-            <input
-              class="signup-input"
-              name="email"
-              type="email"
-              id="email"
-              placeholder="email"
-              onBlur={handleInputChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label for="password">password: </label>
-            <input
-              class="signup-input"
-              name="password"
-              type="password"
-              id="password"
-              placeholder="password"
-              onBlur={handleInputChange}
-            />
-          </Form.Field>
-        </Form.Group>
-        <Button type="submit" id="signup-btn">
-          sign up!
-        </Button>
-      </Form>
-      {error && <p>error: {formErrorMessage}</p>}
-      <Login id="log-in-button" />
-      {/* note: login functionality is in the login component  */}
-    </div>
+    <main id="sign-up-background">
+      <div id="signup-container">
+        <Form container stackable onSubmit={handleFormSubmit} id="signup-form">
+          <header>
+            <a href="/">
+              <h1>join credible</h1>
+            </a>
+          </header>
+
+          <Form.Group widths="spread-evenly">
+            <Form.Field>
+              <label for="username">username: </label>
+              <input
+                class="signup-input"
+                name="username"
+                type="text"
+                id="username"
+                placeholder="username"
+                onBlur={handleInputChange}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label for="email">email: </label>
+              <input
+                class="signup-input"
+                name="email"
+                type="email"
+                id="email"
+                placeholder="email"
+                onBlur={handleInputChange}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label for="password">password: </label>
+              <input
+                class="signup-input"
+                name="password"
+                type="password"
+                id="password"
+                placeholder="password"
+                onBlur={handleInputChange}
+              />
+            </Form.Field>
+          </Form.Group>
+          <Button type="submit" id="signup-btn">
+            sign up!
+          </Button>
+        </Form>
+        {error && <p>error: {formErrorMessage}</p>}
+        <Login id="log-in-button" />
+        {/* note: login functionality is in the login component  */}
+      </div>
+    </main>
   );
 }
 
