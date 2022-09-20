@@ -1,3 +1,4 @@
+import "./App.css";
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import "./App.css";
@@ -9,7 +10,6 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 
@@ -31,6 +31,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -39,15 +40,10 @@ function App() {
           <main id="main-section">
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* <PostCreate />
-              <Post />
-              <Store /> */}
               <Route path="/signup" element={<Signup />} />
-              {/* <Route path="/login" element={<Login />} /> */}
-              {/* <Route path="*" element={<Signup />} /> */}
+              <Route path="*" element={<Signup />} />
             </Routes>
           </main>
-          {/* <Footer id="footer-section" /> */}
         </div>
       </Router>
     </ApolloProvider>

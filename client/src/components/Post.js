@@ -1,9 +1,21 @@
 import React from "react";
+import { useQuery } from "@apollo/client";
+import { QUERY_POSTS } from "../utils/queries";
 
 function Post() {
+  const { loading, data } = useQuery(QUERY_POSTS);
+  console.log(data);
+  const posts = data?.thoughts || [];
+
   return (
     <div className="card-container">
-      <div className="card">Card</div>
+      {posts.map((post) => (
+        <div className="card">
+          <h3>{post.username}</h3>
+          <p>{post.createdAt}</p>
+          <p>{post.thoughtText}</p>
+        </div>
+      ))}
     </div>
   );
 }

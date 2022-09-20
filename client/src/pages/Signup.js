@@ -31,7 +31,7 @@ function Signup() {
       if (!e.target.value.length) {
         setFormErrorMessage(`${e.target.name} is required!`);
       } else {
-        setFormState(...formState, { [e.target.name]: e.target.value });
+        setFormState({...formState, [e.target.name]: e.target.value });
       }
     }
   }
