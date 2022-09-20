@@ -82,12 +82,12 @@ li {
   background-color: var(--color1);
 }
 
-.card-container {
+/* .card-container {
   box-shadow: 2px 2px 2px 2px var(--color3);
   border-radius: 10px;
   margin-top: 3%;
   background-color: var(--color5);
-}
+} */
 
 #post-create {
   background-color: var(--color5);
@@ -113,7 +113,7 @@ li {
   border-style: none;
 }
 
-.credit-section {
+/* .credit-section {
   display: flex;
   justify-content: space-between;
 }
@@ -122,11 +122,11 @@ li {
   display: inline-block;
   width: 20%;
   margin: 2.5%;
-}
+} */
 
-.credit-purchase-card {
+/* .credit-purchase-card {
   height: 50px;
-}
+} */
 
 #signup-form {
   background-color: black;
