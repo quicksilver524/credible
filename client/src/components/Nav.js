@@ -1,24 +1,40 @@
-import React from "react";
+import { React, Redirect } from "react";
+import { useState } from "react";
+
 import AuthService from "../utils/auth";
 
-function Nav({ id }) {
-  // const [yourMom] = useState("yo mama");
-  const loggedIn = AuthService.loggedIn();
+import { Modal, ModalContent } from "semantic-ui-react";
 
-  if (!loggedIn) {
-    return (
-      <header id={id}>
-        <a href="/">
-          <h1>credible</h1>
-        </a>
-        <ul>
-          <li>
-            <a href="/signup">Signup</a>
-          </li>
-        </ul>
-      </header>
-    );
-  }
+function Nav(id) {
+  const [open, setOpen] = React.useState(false);
+  // const [yourMom] = useState("yo mama");
+  // const loggedIn = AuthService.loggedIn();
+
+  // submit signout  form
+  const signOutFormSubmit = async (e) => {
+    e.preventDefault();
+    const navigateOut = () => {
+      <Redirect to="/signup" />;
+    };
+    console.log("signOutFormSubmit signout clicked");
+    AuthService.logout();
+    navigateOut();
+  };
+
+  // if (!loggedIn) {
+  //   return (
+  //     <header id={id}>
+  //       <a href="/">
+  //         <h1>credible</h1>
+  //       </a>
+  //       <ul>
+  //         <li>
+  //           <a href="/signup">Signup</a>
+  //         </li>
+  //       </ul>
+  //     </header>
+  //   );
+  // }
 
   return (
     <header id={id}>
@@ -26,12 +42,16 @@ function Nav({ id }) {
         <h1>credible</h1>
       </a>
       <ul>
-        <li>
+        {/* <li>
           <a href="/">Home</a>
-        </li>
+        </li> */}
         <li>
-          <a href="/signout">Sign Out</a>
-          {/* todo fix to be event listener sign out functionality */}
+          <Modal
+            onClose={signOutFormSubmit}
+            trigger={<p id="signout-btn">sign out</p>}
+          >
+            <ModalContent>see you again soon!</ModalContent>
+          </Modal>
         </li>
         <li>
           <button type="button">
