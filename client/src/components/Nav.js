@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 import AuthService from "../utils/auth";
 
 import { Modal, ModalContent } from "semantic-ui-react";
 
 function Nav(id) {
+  const [open, setOpen] = React.useState(false);
   // const loggedIn = AuthService.loggedIn();
 
   // submit signout  form
@@ -45,8 +46,11 @@ function Nav(id) {
         </li> */}
         <li>
           <Modal
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
+            open={open}
             // onOpen={AuthService.logout()}
-            onClose={AuthService.logout()}
+            onSubmit={AuthService.logout()}
             trigger={<p id="signout-btn">sign out</p>}
           >
             <ModalContent>see you again soon!</ModalContent>
