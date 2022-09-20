@@ -3,69 +3,72 @@ import gold1 from "../pageImages/gold1.png";
 import gold2 from "../pageImages/gold2.png";
 import gold3 from "../pageImages/gold3.png";
 import gold4 from "../pageImages/gold4.png";
-import { Container } from "semantic-ui-react";
-import { Card, Icon, Image, Button } from "semantic-ui-react";
+// import { Container } from "semantic-ui-react";
+import { Card, Image, Button, Grid } from "semantic-ui-react";
 
 function Store() {
   return (
-    <Container id="store-section">
-      <Card.Group itemsPerRow={4} id="credit-section">
-        {/* <Container className="card-container store-container"> */}
-        <Card color="violet" className="card credit-purchase-card">
+    <Grid container stackable id="store-section">
+      {/* <Grid.Row container columns={4} id="credit-section" fits="true"> */}
+      <Grid.Column
+        mobile={16}
+        tablet={8}
+        computer={4}
+        className="card-container store-container"
+      >
+        <Card color="violet" className="card" id="credit-purchase-card">
           <Card.Header as="h2">99 credits</Card.Header>
           <Image src={gold1} alt="gold1" />
-          <Card.Content>
-            <Icon name="hand point right" />
-            <Button
-              // background-color="#4baeae"
-              type="button"
-              className="credit-purchase-button post-create-btn"
-            >
-              Buy Credits
-            </Button>
-          </Card.Content>
+          <Button rounded type="button" id="credit-purchase-button">
+            Buy Credits
+          </Button>
         </Card>
-        {/* </Container> */}
-        {/* <div className="card-container store-container"> */}
-        <Card color="violet" className="card credit-purchase-card">
+      </Grid.Column>
+      <Grid.Column
+        mobile={16}
+        tablet={8}
+        computer={4}
+        className="card-container store-container"
+      >
+        <Card color="violet" className="card" id="credit-purchase-card">
           <Card.Header as="h2">249 credits</Card.Header>
           <Image src={gold2} alt="gold2" />
-          <Button
-            type="button"
-            className="credit-purchase-button post-create-btn"
-          >
-            <Icon name="hand point right" />
+          <Button rounded type="button" id="credit-purchase-button">
             Buy Credits
           </Button>
         </Card>
-        {/* </div>
-        <div className="card-container store-container"> */}
-        <Card color="violet" className="card credit-purchase-card">
+      </Grid.Column>
+      <Grid.Column
+        mobile={16}
+        tablet={8}
+        computer={4}
+        className="card-container store-container"
+      >
+        <Card color="violet" className="card" id="credit-purchase-card">
           <Card.Header as="h2">499 credits</Card.Header>
           <Image src={gold3} alt="gold3" />
-          <Button
-            type="button"
-            className="credit-purchase-button post-create-btn"
-          >
+          <Button rounded type="button" id="credit-purchase-button">
             Buy Credits
           </Button>
         </Card>
-        {/* </div>
-        <div className="card-container store-container"> */}
-        <Card color="violet" className="card credit-purchase-card">
+      </Grid.Column>
+      <Grid.Column
+        mobile={16}
+        tablet={8}
+        computer={4}
+        className="card-container store-container"
+      >
+        <Card color="violet" className="card" id="credit-purchase-card">
           <Card.Header as="h2">999 credits</Card.Header>
           <Image src={gold4} alt="gold4" />
-          <Button
-            type="button"
-            className="credit-purchase-button post-create-btn"
-          >
+          <Button rounded type="button" id="credit-purchase-button">
             Buy Credits
           </Button>
         </Card>
-        {/* </div> */}
-      </Card.Group>
-      <div id="product-section"></div>
-    </Container>
+      </Grid.Column>
+      {/* </Grid.Row> */}
+      {/* <Grid.Row id="product-section"></Grid.Row> */}
+    </Grid>
   );
 }
 
