@@ -37,12 +37,6 @@ function LoginModal(props) {
     } catch (e) {
       console.error(e);
     }
-
-    // clear form values
-    // setFormState({
-    //   email: "",
-    //   password: "",
-    // });
   };
 
   return (
@@ -82,6 +76,7 @@ function LoginModal(props) {
             <Grid columns={2} relaxed="very">
               <Grid.Column floated="left" width={4}>
                 <Button
+                  id="login-btn"
                   type="submit"
                   color="black"
                   onClick={() => setOpen(false)}
@@ -89,19 +84,17 @@ function LoginModal(props) {
                   I'm not credible
                 </Button>
               </Grid.Column>
-              <Grid.Column floated="right" width={5}>
+              <Grid.Column floated="right" width={7}>
                 <Form.Button
+                  id="login-btn-yes"
                   content="yep, that's me"
                   labelPosition="right"
                   icon="checkmark"
                   type="submit"
-                  // onClick={() => setOpen(false)}
-                  positive
                 />
               </Grid.Column>
             </Grid>
-            {error && <div>login failed</div>}
-            {/* is this error in the right spot?  */}
+            {error && <div>{error.message}</div>}
           </Modal.Actions>
         </Form>
       </Modal.Content>

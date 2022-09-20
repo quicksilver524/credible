@@ -1,7 +1,7 @@
 :root {
   --color1: #4baeae;
-    --color1med: #2e8b8b;
-  --color1dark:#046e6e;
+  --color1med: #2e8b8b;
+  --color1dark: #046e6e;
   --color2: #0c5c84;
   --color3: #003953;
   --color4: #fccddd;
@@ -84,13 +84,13 @@ li {
   background-color: var(--color1);
 }
 
-#credit-purchase-card{
-    box-shadow: 2px 2px 2px 2px var(--color3);
-    min-height: 50px;
-    justify-content: center;
-    align-items: center;
+#credit-purchase-card {
+  box-shadow: 2px 2px 2px 2px var(--color3);
+  min-height: 50px;
+  justify-content: center;
+  align-items: center;
 }
- #credit-purchase-button {
+#credit-purchase-button {
   width: 100%;
   color: var(--color1med);
   font-weight: bold;
@@ -98,7 +98,7 @@ li {
   margin-bottom: 1%;
   border-style: none;
 }
- #credit-purchase-button:hover {
+#credit-purchase-button:hover {
   color: var(--color1dark);
 }
 /* .card-container {
@@ -147,10 +147,10 @@ li {
   height: 50px;
 } */
 
-#signup-container{
-padding: 50px;
-width:fit-content;
-/* flex-grow: inherit; */
+#signup-container {
+  padding: 50px;
+  width: fit-content;
+  /* flex-grow: inherit; */
 }
 
 #signup-form {
@@ -159,20 +159,28 @@ width:fit-content;
   padding: 50px;
 }
 
-.signup-input{
-min-width: 220px;
+.signup-input {
+  min-width: 220px;
 }
 
-.signup-input:active{
-border:#046e6e solid 1pt;
+.signup-input:active {
+  border: #046e6e solid 1pt;
 }
 
-#signup-btn, #login-btn{
-padding: 10px, 50px;
-margin: 20px 15%;
-border:#046e6e solid 1pt;
-box-shadow: 2px 2px 2px 2px var(--color3);
-
+#signup-btn,
+#login-btn,
+#login-btn-yes {
+  padding: 10px, 50px;
+  margin: 20px 15%;
+  border: #046e6e solid 1pt;
+  box-shadow: 2px 2px 2px 2px var(--color3);
+}
+#login-btn-yes {
+  background-color: var(--color4);
+  opacity: 80%;
+  color: black;
+  font-size: large;
+  min-width:200px;
 }
 
 @keyframes App-logo-spin {
