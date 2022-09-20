@@ -15,7 +15,7 @@ function Signup() {
   const [formErrorMessage, setFormErrorMessage] = useState("");
   const [addUser, { error }] = useMutation(ADD_USER);
   function handleInputChange(e) {
-    console.log("handle change activated")
+    console.log("handle change activated");
     if (e.target.name === "signup-email") {
       const isValid = validateEmail(e.target.value);
       if (!isValid) {
@@ -28,7 +28,7 @@ function Signup() {
       if (!e.target.value.length) {
         setFormErrorMessage(`${e.target.name} is required!`);
       } else {
-        setFormState(...formState, { [e.target.name]: e.target.value });
+        setFormState({...formState, [e.target.name]: e.target.value });
       }
     }
   }
@@ -36,7 +36,7 @@ function Signup() {
   // submit form
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-console.log("handleformsubmit signup clicked");
+    console.log("handleformsubmit signup clicked");
     try {
       const { data } = await addUser({
         variables: { ...formState },
@@ -51,7 +51,7 @@ console.log("handleformsubmit signup clicked");
   return (
     <div id="signup-container">
       <form onSubmit={handleFormSubmit} id="signup-form">
-        <label for="username">username: </label>
+        <label htmlFor="username">username: </label>
         <input
           name="username"
           type="username"
@@ -59,7 +59,7 @@ console.log("handleformsubmit signup clicked");
           placeholder="username"
           onBlur={handleInputChange}
         />
-        <label for="email">email: </label>
+        <label htmlFor="email">email: </label>
         <input
           name="email"
           type="email"
@@ -67,7 +67,7 @@ console.log("handleformsubmit signup clicked");
           placeholder="email"
           onBlur={handleInputChange}
         />
-        <label for="password">password: </label>
+        <label htmlFor="password">password: </label>
         <input
           name="password"
           type="password"
