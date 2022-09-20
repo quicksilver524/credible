@@ -1,5 +1,7 @@
 :root {
   --color1: #4baeae;
+  --color1med: #2e8b8b;
+  --color1dark: #046e6e;
   --color2: #0c5c84;
   --color3: #003953;
   --color4: #fccddd;
@@ -82,12 +84,29 @@ li {
   background-color: var(--color1);
 }
 
-.card-container {
+#credit-purchase-card {
+  box-shadow: 2px 2px 2px 2px var(--color3);
+  min-height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+#credit-purchase-button {
+  width: 100%;
+  color: var(--color1med);
+  font-weight: bold;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-style: none;
+}
+#credit-purchase-button:hover {
+  color: var(--color1dark);
+}
+/* .card-container {
   box-shadow: 2px 2px 2px 2px var(--color3);
   border-radius: 10px;
   margin-top: 3%;
   background-color: var(--color5);
-}
+} */
 
 #post-create {
   background-color: var(--color5);
@@ -113,7 +132,7 @@ li {
   border-style: none;
 }
 
-.credit-section {
+/* .credit-section {
   display: flex;
   justify-content: space-between;
 }
@@ -122,15 +141,69 @@ li {
   display: inline-block;
   width: 20%;
   margin: 2.5%;
+} */
+
+/* .credit-purchase-card {
+  height: 50px;
+} */
+
+#sign-up-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/signupBackground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 90%;
 }
 
-.credit-purchase-card {
-  height: 50px;
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 50%;
+  }
+}
+#credibleWord {
+  animation: fadeInAnimation 10s;
+  max-height: 180px;
+  opacity: 50%;
+}
+#signup-container {
+  padding: 50px;
+  width: fit-content;
+  /* flex-grow: inherit; */
 }
 
 #signup-form {
   background-color: black;
   z-index: 99;
+  padding: 50px;
+}
+
+.signup-input {
+  min-width: 220px;
+}
+
+.signup-input:active {
+  border: #046e6e solid 1pt;
+}
+
+#signup-btn,
+#login-btn,
+#login-btn-yes {
+  padding: 10px, 50px;
+  margin: 20px 15%;
+  border: #046e6e solid 1pt;
+  box-shadow: 2px 2px 2px 2px var(--color3);
+}
+#login-btn-yes {
+  background-color: var(--color4);
+  opacity: 80%;
+  color: black;
+  font-size: large;
+  min-width: 200px;
 }
 
 @keyframes App-logo-spin {

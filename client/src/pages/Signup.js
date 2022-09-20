@@ -3,8 +3,11 @@ import { validateEmail } from "../utils/helpers";
 import Login from "../components/Login";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
+import credibleWord from "../images/signupCredible1.png";
 
 import AuthService from "../utils/auth";
+
+import { Button, Form, Image } from "semantic-ui-react";
 
 function Signup() {
   const [formState, setFormState] = useState({
@@ -49,40 +52,61 @@ function Signup() {
   };
 
   return (
-    <div id="signup-container">
-      <form onSubmit={handleFormSubmit} id="signup-form">
-        <label htmlFor="username">username: </label>
-        <input
-          name="username"
-          type="username"
-          id="username"
-          placeholder="username"
-          onBlur={handleInputChange}
-        />
-        <label htmlFor="email">email: </label>
-        <input
-          name="email"
-          type="email"
-          id="email"
-          placeholder="email"
-          onBlur={handleInputChange}
-        />
-        <label htmlFor="password">password: </label>
-        <input
-          name="password"
-          type="password"
-          id="password"
-          placeholder="password"
-          onBlur={handleInputChange}
-        />
-        <button type="submit" id="sign-up-button">
-          sign up!
-        </button>
-      </form>
-      {error && <p>error: {formErrorMessage}</p>}
-      <Login id="log-in-button" />
-      {/* note: login functionality is in the login component  */}
-    </div>
+    <main id="sign-up-background">
+      <div id="signup-container">
+        <Form container stackable onSubmit={handleFormSubmit} id="signup-form">
+          <header>
+            <a href="/">
+              <h1>join credible</h1>
+            </a>
+          </header>
+
+          <Form.Group widths="spread-evenly">
+            <Form.Field>
+              <label for="username">username: </label>
+              <input
+                class="signup-input"
+                name="username"
+                type="text"
+                id="username"
+                placeholder="username"
+                onBlur={handleInputChange}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label for="email">email: </label>
+              <input
+                class="signup-input"
+                name="email"
+                type="email"
+                id="email"
+                placeholder="email"
+                onBlur={handleInputChange}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label for="password">password: </label>
+              <input
+                class="signup-input"
+                name="password"
+                type="password"
+                id="password"
+                placeholder="password"
+                onBlur={handleInputChange}
+              />
+            </Form.Field>
+          </Form.Group>
+          <Button type="submit" id="signup-btn">
+            sign up!
+          </Button>
+        </Form>
+        {error && <p>error: {formErrorMessage}</p>}
+        <Login id="log-in-button" />
+        {/* note: login functionality is in the login component  */}
+
+        <Image centered id="credibleWord" src={credibleWord} />
+      </div>
+    </main>
   );
 }
 

@@ -37,12 +37,6 @@ function LoginModal(props) {
     } catch (e) {
       console.error(e);
     }
-
-    // clear form values
-    // setFormState({
-    //   email: "",
-    //   password: "",
-    // });
   };
 
   return (
@@ -50,16 +44,16 @@ function LoginModal(props) {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Button>Already A Friend - Login!</Button>}
+      trigger={<Button id="login-btn">already a friend - login!</Button>}
     >
-      <Modal.Header>Login</Modal.Header>
+      <Modal.Header>login</Modal.Header>
       <Modal.Content image>
         <Image size="medium" src={LoginImage} wrapped />
         <Form onSubmit={handleFormSubmit}>
           <Modal.Description>
             <Form.Input
               fluid
-              label="Email"
+              label="email"
               type="email"
               placeholder="Email"
               name="email"
@@ -68,7 +62,7 @@ function LoginModal(props) {
               onChange={handleChange}
             />
             <Form.Input
-              label="Password"
+              label="password"
               type="password"
               placeholder="password"
               name="password"
@@ -82,26 +76,25 @@ function LoginModal(props) {
             <Grid columns={2} relaxed="very">
               <Grid.Column floated="left" width={4}>
                 <Button
+                  id="login-btn"
                   type="submit"
                   color="black"
                   onClick={() => setOpen(false)}
                 >
-                  I'm Not Credible
+                  I'm not credible
                 </Button>
               </Grid.Column>
-              <Grid.Column floated="right" width={5}>
+              <Grid.Column floated="right" width={7}>
                 <Form.Button
-                  content="Yep, that's me"
+                  id="login-btn-yes"
+                  content="yep, that's me"
                   labelPosition="right"
                   icon="checkmark"
                   type="submit"
-                  // onClick={() => setOpen(false)}
-                  positive
                 />
               </Grid.Column>
             </Grid>
-            {error && <div>Login failed</div>}
-            {/* is this error in the right spot?  */}
+            {error && <div>{error.message}</div>}
           </Modal.Actions>
         </Form>
       </Modal.Content>
