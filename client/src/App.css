@@ -156,6 +156,20 @@ li {
   position: relative;
   opacity: 90%;
 }
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 50%;
+  }
+}
+#credibleWord {
+  animation: fadeInAnimation 10s;
+  max-height: 180px;
+  opacity: 50%;
+}
 #signup-container {
   padding: 50px;
   width: fit-content;

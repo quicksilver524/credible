@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Grid, Button, Form, Image, Modal } from "semantic-ui-react";
-import LoginImage from "../images/LoginImage1.jpg";
+import LoginImage from "../images/LoginImage.jpeg";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 

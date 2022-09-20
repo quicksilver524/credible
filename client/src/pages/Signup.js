@@ -3,10 +3,11 @@ import { validateEmail } from "../utils/helpers";
 import Login from "../components/Login";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
+import credibleWord from "../images/signupCredible1.png";
 
 import AuthService from "../utils/auth";
 
-import { Button, Form } from "semantic-ui-react";
+import { Button, Form, Image } from "semantic-ui-react";
 
 function Signup() {
   const [formState, setFormState] = useState({
@@ -102,6 +103,8 @@ function Signup() {
         {error && <p>error: {formErrorMessage}</p>}
         <Login id="log-in-button" />
         {/* note: login functionality is in the login component  */}
+
+        <Image centered id="credibleWord" src={credibleWord} />
       </div>
     </main>
   );
