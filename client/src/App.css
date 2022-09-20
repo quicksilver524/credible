@@ -147,9 +147,32 @@ li {
   height: 50px;
 } */
 
+#signup-container{
+padding: 50px;
+width:fit-content;
+/* flex-grow: inherit; */
+}
+
 #signup-form {
   background-color: black;
   z-index: 99;
+  padding: 50px;
+}
+
+.signup-input{
+min-width: 220px;
+}
+
+.signup-input:active{
+border:#046e6e solid 1pt;
+}
+
+#signup-btn, #login-btn{
+padding: 10px, 50px;
+margin: 20px 15%;
+border:#046e6e solid 1pt;
+box-shadow: 2px 2px 2px 2px var(--color3);
+
 }
 
 @keyframes App-logo-spin {

@@ -50,16 +50,16 @@ function LoginModal(props) {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Button>Already A Friend - Login!</Button>}
+      trigger={<Button id="login-btn">already a friend - login!</Button>}
     >
-      <Modal.Header>Login</Modal.Header>
+      <Modal.Header>login</Modal.Header>
       <Modal.Content image>
         <Image size="medium" src={LoginImage} wrapped />
         <Form onSubmit={handleFormSubmit}>
           <Modal.Description>
             <Form.Input
               fluid
-              label="Email"
+              label="email"
               type="email"
               placeholder="Email"
               name="email"
@@ -68,7 +68,7 @@ function LoginModal(props) {
               onChange={handleChange}
             />
             <Form.Input
-              label="Password"
+              label="password"
               type="password"
               placeholder="password"
               name="password"
@@ -86,12 +86,12 @@ function LoginModal(props) {
                   color="black"
                   onClick={() => setOpen(false)}
                 >
-                  I'm Not Credible
+                  I'm not credible
                 </Button>
               </Grid.Column>
               <Grid.Column floated="right" width={5}>
                 <Form.Button
-                  content="Yep, that's me"
+                  content="yep, that's me"
                   labelPosition="right"
                   icon="checkmark"
                   type="submit"
@@ -100,7 +100,7 @@ function LoginModal(props) {
                 />
               </Grid.Column>
             </Grid>
-            {error && <div>Login failed</div>}
+            {error && <div>login failed</div>}
             {/* is this error in the right spot?  */}
           </Modal.Actions>
         </Form>

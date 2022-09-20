@@ -52,13 +52,14 @@ function Signup() {
 
   return (
     <div id="signup-container">
-      <Form onSubmit={handleFormSubmit} id="signup-form">
-        <Form.Group widths="equal">
+      <Form container stackable onSubmit={handleFormSubmit} id="signup-form">
+        <Form.Group widths="spread-evenly">
           <Form.Field>
             <label for="username">username: </label>
             <input
+              class="signup-input"
               name="username"
-              type="username"
+              type="text"
               id="username"
               placeholder="username"
               onBlur={handleInputChange}
@@ -67,6 +68,7 @@ function Signup() {
           <Form.Field>
             <label for="email">email: </label>
             <input
+              class="signup-input"
               name="email"
               type="email"
               id="email"
@@ -77,6 +79,7 @@ function Signup() {
           <Form.Field>
             <label for="password">password: </label>
             <input
+              class="signup-input"
               name="password"
               type="password"
               id="password"
@@ -85,7 +88,7 @@ function Signup() {
             />
           </Form.Field>
         </Form.Group>
-        <Button type="submit" id="sign-up-button">
+        <Button type="submit" id="signup-btn">
           sign up!
         </Button>
       </Form>

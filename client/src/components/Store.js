@@ -19,9 +19,13 @@ function Store() {
         <Card color="violet" className="card" id="credit-purchase-card">
           <Card.Header as="h2">99 credits</Card.Header>
           <Image src={gold1} alt="gold1" />
-          <Button rounded type="button" id="credit-purchase-button">
-            Buy Credits
-          </Button>
+          <div class="ui blurring inverted dimmer">
+            <div class="center">
+              <Button rounded type="button" id="credit-purchase-button">
+                Buy Credits
+              </Button>
+            </div>
+          </div>
         </Card>
       </Grid.Column>
       <Grid.Column
