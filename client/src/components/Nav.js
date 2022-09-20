@@ -1,26 +1,24 @@
-import { React, Redirect } from "react";
-import { useState } from "react";
+import React from "react";
 
 import AuthService from "../utils/auth";
 
 import { Modal, ModalContent } from "semantic-ui-react";
 
 function Nav(id) {
-  const [open, setOpen] = React.useState(false);
-  // const [yourMom] = useState("yo mama");
   // const loggedIn = AuthService.loggedIn();
 
   // submit signout  form
-  const signOutFormSubmit = async (e) => {
-    e.preventDefault();
-    const navigateOut = () => {
-      <Redirect to="/signup" />;
-    };
-    console.log("signOutFormSubmit signout clicked");
-    AuthService.logout();
-    navigateOut();
-  };
+  // const signOutFormSubmit = async (e) => {
+  //   e.preventDefault();
 
+  //   console.log("signOutFormSubmit signout clicked");
+  //   AuthService.logout();
+  //   // navigateOut();
+  // };
+
+  // const navigateOut = () => {
+  //   <Redirect to="/signup" />;
+  // };
   // if (!loggedIn) {
   //   return (
   //     <header id={id}>
@@ -47,7 +45,8 @@ function Nav(id) {
         </li> */}
         <li>
           <Modal
-            onClose={signOutFormSubmit}
+            // onOpen={AuthService.logout()}
+            onClose={AuthService.logout()}
             trigger={<p id="signout-btn">sign out</p>}
           >
             <ModalContent>see you again soon!</ModalContent>
