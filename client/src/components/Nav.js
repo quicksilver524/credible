@@ -30,7 +30,7 @@ function Nav({ id }) {
 
   return (
     <header id={id}>
-      <a href="/">
+      <a href="/" id="nav-header">
         <h1>credible</h1>
       </a>
       <ul>

@@ -54,13 +54,10 @@ const resolvers = {
       if (!user) {
         throw new AuthenticationError("Incorrect credentials");
       }
-
       const correctPw = await user.isCorrectPassword(password);
-
       if (!correctPw) {
         throw new AuthenticationError("Incorrect credentials");
       }
-
       const token = signToken(user);
       console.log(user);
       if (!user.timeIn) {
@@ -82,27 +79,22 @@ const resolvers = {
     },
     addThought: async (parent, args, context) => {
       if (context.user) {
+        if (user.points <= 0) {
+          throw new ForbiddenError("Not Enough Credits to Post");
+        }
         const thought = await Thought.create({
           ...args,
           username: context.user.username,
         });
-        // console.log(context.user);
         let user = await User.findById(context.user._id);
-        // console.log(user);
-        if (!user.points) {
-          throw new ForbiddenError("Not Enough Credits to Post");
-        }
-
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          //after created a post ,lose 1 ppoint
+          //after created a post,lose 1 ppoint
           { $push: { thoughts: thought._id }, $inc: { points: -1 } },
           { new: true }
         );
-
         return thought;
       }
-
       throw new AuthenticationError("You need to be logged in!");
     },
 
@@ -135,7 +127,6 @@ const resolvers = {
           { $addToSet: { dislikes: context.user._id } },
           { new: true, runValidators: true }
         );
-
         // points - 1
         await User.findOneAndUpdate(
           { username: thought.username },
@@ -143,13 +134,11 @@ const resolvers = {
           { $inc: { points: -1 } },
           { new: true }
         );
-
         return thought;
       }
 
       throw new AuthenticationError("You need to be logged in!");
     },
-
     addReaction: async (parent, { thoughtId, reactionBody }, context) => {
       if (context.user) {
         const updatedThought = await Thought.findOneAndUpdate(
@@ -161,10 +150,8 @@ const resolvers = {
           },
           { new: true, runValidators: true }
         );
-
         return updatedThought;
       }
-
       throw new AuthenticationError("You need to be logged in!");
     },
     addFriend: async (parent, { friendId }, context) => {
@@ -174,10 +161,8 @@ const resolvers = {
           { $addToSet: { friends: friendId } },
           { new: true }
         ).populate("friends");
-
         return updatedUser;
       }
-
       throw new AuthenticationError("You need to be logged in!");
     },
   },
