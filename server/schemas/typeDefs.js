@@ -49,6 +49,11 @@ const typeDefs = gql`
     dislikeThought(thoughtId: ID!): Thought
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
     addFriend(friendId: ID!): User
+    checkout(credits: String!, price: Int!): Checkout
+    recharge(point: Int!): User
+  }
+  type Checkout {
+    session: ID
   }
 `;
 
