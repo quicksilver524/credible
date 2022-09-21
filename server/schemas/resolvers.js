@@ -4,7 +4,7 @@ const {
 } = require("apollo-server-express");
 const { User, Thought } = require("../models");
 const { signToken } = require("../utils/auth");
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
@@ -114,7 +114,7 @@ const resolvers = {
           // liked post，point + 1
           { $inc: { points: 1 } }
         );
-
+        console.log("I liked a thought");
         return thought;
       }
 
@@ -166,20 +166,21 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    checkout: async(parent, args, context) => {
-      const url = new URL(context.headers.referer || context.headers.origin).origin;
+    checkout: async (parent, args, context) => {
+      const url = new URL(context.headers.referer || context.headers.origin)
+        .origin;
       //generate product id
       const product = await stripe.products.create({
         name: "credits",
         description: args.credits || "credits",
-        images: [`${url}/static/media/gold2.bde56015.png`]
+        images: [`${url}/static/media/gold2.bde56015.png`],
       });
 
       //generate price id using the product id
       const price = await stripe.prices.create({
         product: product.id,
         unit_amount: args.price * 100,
-        currency: 'usd',
+        currency: "usd",
       });
 
       const session = await stripe.checkout.sessions.create({
@@ -190,28 +191,28 @@ const resolvers = {
             quantity: 1,
           },
         ],
-        mode: 'payment',
+        mode: "payment",
         success_url: `${url}/checkoutsuccess?success=true`,
         cancel_url: `${url}/checkoutsuccess?canceled=true`,
       });
-      return{ session: session.id };
+      return { session: session.id };
     },
     // 充值
-    recharge: async (parent, {point}, context) => {
+    recharge: async (parent, { point }, context) => {
       if (context.user) {
-console.log(point);
+        console.log(point);
         // points 加 point
         const updatedUser = await User.findOneAndUpdate(
-            {_id: context.user._id},
-            {$inc: {points: point}},
-            {new: true}
+          { _id: context.user._id },
+          { $inc: { points: point } },
+          { new: true }
         );
 
         return updatedUser;
       }
 
-      throw new AuthenticationError('You need to be logged in!');
-    }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 

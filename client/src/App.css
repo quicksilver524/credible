@@ -201,6 +201,35 @@ li {
 .error {
   color: red;
 }
+
+.reaction-btn {
+  border-radius: 5px;
+  margin: 1%;
+  width: 30%;
+}
+
+.dislike-btn {
+  background-color: red;
+  font-weight: bold;
+  color: var(--color3);
+}
+
+.like-btn {
+  background-color: var(--color3);
+  color: var(--color4);
+  font-weight: bold;
+}
+
+.comment-card {
+  border-top: 3px solid var(--color3);
+  border-bottom: 1px solid var(--color3);
+  padding: 10px 0;
+}
+
+.comment-create-container {
+  padding: 10px 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -88,18 +88,36 @@ export const REMOVE_FRIEND = gql`
 `;
 
 export const CHECKOUT = gql`
-    mutation Checkout($credits: String!, $price: Int!) {
-      checkout(credits: $credits, price: $price) {
-        session
-      }
+  mutation Checkout($credits: String!, $price: Int!) {
+    checkout(credits: $credits, price: $price) {
+      session
     }
+  }
 `;
 
 export const RECHARGE = gql`
-mutation Recharge($point: Int!) {
-  recharge(point: $point) {
-    _id
-    points
+  mutation Recharge($point: Int!) {
+    recharge(point: $point) {
+      _id
+      points
+    }
   }
-}
+`;
+
+export const LIKE_THOUGHT = gql`
+  mutation LikeThought($thoughtId: ID!) {
+    likeThought(thoughtId: $thoughtId) {
+      _id
+      likeCount
+    }
+  }
+`;
+
+export const DISLIKE_THOUGHT = gql`
+  mutation LikeThought($thoughtId: ID!) {
+    dislikeThought(thoughtId: $thoughtId) {
+      _id
+      dislikeCount
+    }
+  }
 `;
