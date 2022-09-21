@@ -155,7 +155,7 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  opacity: 90%;
+  opacity: 10%;
 }
 
 @keyframes fadeInAnimation {
