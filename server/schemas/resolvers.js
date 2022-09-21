@@ -79,6 +79,7 @@ const resolvers = {
     },
     addThought: async (parent, args, context) => {
       if (context.user) {
+        let user = await User.findById(context.user._id);
         if (user.points <= 0) {
           throw new ForbiddenError("Not Enough Credits to Post");
         }
@@ -86,7 +87,6 @@ const resolvers = {
           ...args,
           username: context.user.username,
         });
-        let user = await User.findById(context.user._id);
         await User.findByIdAndUpdate(
           { _id: context.user._id },
           //after created a post,lose 1 ppoint
