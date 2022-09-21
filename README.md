@@ -9,7 +9,7 @@
 
 ## Description
 
-credible is a light-weight social networking site aimed at changing the way one communicates through purchacing credits earned through signing up, likes received through posts made and when directly purchacing credits. Credits function as the means to purchace a posting space. Without credits one cannot post anything or add additional comments to posts made. The goals is to make social communication focused on what one wants to say while providing value to those words shared. 
+credible is a light-weight social networking site aimed at changing the way one communicates through purchasing credits earned through signing up, likes received through posts made, and when directly purchasing credits. Credits function as the means to purchace a posting space. Without credits one cannot post anything or add additional comments to posts made. The goals is to make social communication focused on what one wants to say while providing value to those words shared. 
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@ In order to install this project you must clone this project on to your local ma
 
 ## Usage
 
-  One has the ability to purchace credits to post losing one credit to each post and or comments to posts. One acquires additional credits through liked posts and purchacing directly.
+  One has the ability to purchase credits to post losing one credit to each post and or comments to posts. One acquires additional credits through liked posts and purchasing directly.
 
 ## Instructions
 
