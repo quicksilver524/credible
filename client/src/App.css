@@ -149,7 +149,7 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  opacity: 90%;
+  /* opacity: 10%; */
 }
 
 @keyframes fadeInAnimation {
@@ -157,13 +157,13 @@ li {
     opacity: 0;
   }
   to {
-    opacity: 50%;
+    opacity: 55%;
   }
 }
 #credibleWord {
   animation: fadeInAnimation 10s;
   max-height: 180px;
-  opacity: 50%;
+  opacity: 55%;
 }
 #signup-container {
   padding: 50px;

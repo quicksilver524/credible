@@ -45,11 +45,11 @@ In order to install this project you must clone this project on to your local ma
 
 - Step 3: Type code .
 
-* ![step-3](images/step-4.png)
+* ![step-3](images/step-3.png)
 
 ## Website-heroku-deployment
 
-# [To view our page]()
+# [To view our page](https://in-credible.herokuapp.com/signup)
 
 ## Created-by
 
