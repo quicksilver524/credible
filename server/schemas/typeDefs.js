@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -7,6 +7,8 @@ const typeDefs = gql`
     email: String
     friendCount: Int
     points: Int
+    timeOut: String
+    timeIn: String
     likeCount: Int
     thoughtsCount: Int
     thoughts: [Thought]

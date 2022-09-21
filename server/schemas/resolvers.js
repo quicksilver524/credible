@@ -62,6 +62,22 @@ const resolvers = {
       }
 
       const token = signToken(user);
+      console.log(user);
+      if (!user.timeIn) {
+        user.points += 5;
+      } else {
+        const lastTimeIn = new Date(user.timeIn).getTime();
+        const now = Date.now();
+        const diff = Math.abs(now - lastTimeIn) / 36e5;
+        if (diff > 5) {
+          user.points += 5;
+        } else {
+          user.points += 1;
+        }
+        console.log(diff);
+      }
+      user.timeIn = Date.now();
+      await user.save();
       return { token, user };
     },
     addThought: async (parent, args, context) => {
