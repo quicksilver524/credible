@@ -4,7 +4,6 @@ import { QUERY_POSTS } from "../utils/queries";
 
 function Post() {
   const { loading, data } = useQuery(QUERY_POSTS);
-  console.log(data);
   const posts = data?.thoughts || [];
 
   return (

@@ -71,6 +71,7 @@ export const QUERY_ME = gql`
       timeIn
       timeOut
       friendCount
+      points
       thoughts {
         _id
         thoughtText

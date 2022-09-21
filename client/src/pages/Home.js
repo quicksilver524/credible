@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <div>
-      <Nav id="nav-section" />
+      <Nav id="nav-section" userData={userData} />
       <main>
         <div id="main-section-home">
           <div>

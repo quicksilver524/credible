@@ -2,7 +2,7 @@ import React from "react";
 import AuthService from "../utils/auth";
 import { Modal, Icon } from "semantic-ui-react";
 
-function Nav({ id }) {
+function Nav({ id, userData }) {
   const [open, setOpen] = React.useState(false);
   // const [yourMom] = useState("yo mama");
   // const loggedIn = AuthService.loggedIn();
@@ -21,6 +21,8 @@ function Nav({ id }) {
   //     </header>
   //   );
   // }
+  console.log(userData);
+  const points = userData?.me?.points || "I am running a naked mile.";
 
   const navOut = async (event) => {
     event.preventDefault();
@@ -29,7 +31,7 @@ function Nav({ id }) {
   };
 
   return (
-    <header id={id}>
+    <header id={id} className="home-header">
       <a href="/" id="nav-header">
         <h1>credible</h1>
       </a>
@@ -53,14 +55,10 @@ function Nav({ id }) {
             </Modal.Content>
           </Modal>
         </li>
+        <li>{points} credits</li>
         <li>
           <button type="button">
             <h2>Buy Credits!</h2>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <h2>Credit Store</h2>
           </button>
         </li>
       </ul>
