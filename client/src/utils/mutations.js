@@ -86,3 +86,20 @@ export const REMOVE_FRIEND = gql`
     }
   }
 `;
+
+export const CHECKOUT = gql`
+    mutation Checkout($credits: String!, $price: Int!) {
+      checkout(credits: $credits, price: $price) {
+        session
+      }
+    }
+`;
+
+export const RECHARGE = gql`
+mutation Recharge($point: Int!) {
+  recharge(point: $point) {
+    _id
+    points
+  }
+}
+`;
