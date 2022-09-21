@@ -196,11 +196,11 @@ const resolvers = {
       });
       return{ session: session.id };
     },
-    // buy credits
+    // 充值
     recharge: async (parent, {point}, context) => {
       if (context.user) {
 console.log(point);
-        // user points + credits
+        // points 加 point
         const updatedUser = await User.findOneAndUpdate(
             {_id: context.user._id},
             {$inc: {points: point}},
