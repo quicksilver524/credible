@@ -146,6 +146,7 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  min-height: 100vh;
   /* opacity: 10%; */
 }
 /* 
@@ -166,6 +167,11 @@ li {
   padding: 50px;
   width: fit-content;
   /* flex-grow: inherit; */
+}
+
+.signup-header {
+  text-decoration: none;
+  color: var(--color4);
 }
 
 #signup-form {
@@ -228,6 +234,15 @@ li {
 
 .comment-create-container {
   padding: 10px 0;
+}
+
+.comment-btn {
+  margin: 0 15px 15px 15px;
+}
+
+.credible-footer {
+  background-color: var(--color1);
+  color: var(--color4);
 }
 
 @keyframes App-logo-spin {

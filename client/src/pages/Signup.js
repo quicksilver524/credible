@@ -59,7 +59,7 @@ function Signup() {
           id="signup-form"
         >
           <header>
-            <a href="/">
+            <a href="/" className="signup-header">
               <h1>join credible</h1>
             </a>
           </header>

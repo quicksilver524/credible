@@ -102,7 +102,7 @@ function Post() {
               ></textarea>
               <button
                 type="button"
-                className="like-btn"
+                className="like-btn comment-btn"
                 onClick={handleCommentSubmit}
                 id={`id_${post._id}`}
               >
