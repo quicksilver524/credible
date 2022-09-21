@@ -13,6 +13,12 @@ function Post() {
           <h3>{post.username}</h3>
           <p>{post.createdAt}</p>
           <p>{post.thoughtText}</p>
+          <button type="button" className="reaction-btn like-btn">
+            Like
+          </button>
+          <button type="button" className="reaction-btn dislike-btn">
+            Dislike
+          </button>
         </div>
       ))}
     </div>

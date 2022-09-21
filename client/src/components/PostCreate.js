@@ -22,7 +22,6 @@ const PostCreate = () => {
       } catch (e) {
         console.warn(e);
       }
-
       // update thought array's cache
       const { thoughts } = cache.readQuery({ query: QUERY_POSTS });
       cache.writeQuery({
@@ -31,30 +30,21 @@ const PostCreate = () => {
       });
     },
   });
-
-  // console.log(error);
-
   // update state based on form input changes
   const handleChange = (event) => {
     // if (event.target.value.length <= 280) {
     if (event.target.value) {
       setText(event.target.value);
-      // setCharacterCount(event.target.value.length);
     }
   };
-
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
       await addThought({
         variables: { thoughtText },
       });
-
-      // clear form value
+      window.location.reload();
       setText("");
-      // setCharacterCount(0);
     } catch (e) {
       console.error(e);
     }
@@ -73,7 +63,7 @@ const PostCreate = () => {
             <h2>Post</h2>
           </button>
         </form>
-        {error && <div>{error.message}</div>}
+        {error && <div className="error">{error.message}</div>}
       </div>
     </div>
   );

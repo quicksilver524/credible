@@ -198,6 +198,9 @@ li {
   min-width: 200px;
 }
 
+.error {
+  color: red;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

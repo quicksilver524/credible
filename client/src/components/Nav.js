@@ -2,37 +2,17 @@ import React from "react";
 import AuthService from "../utils/auth";
 import { Modal, Icon } from "semantic-ui-react";
 
-function Nav({ id, userData }) {
+function Nav({ id, userData, storeState, setStoreState }) {
   const [open, setOpen] = React.useState(false);
-  // const [yourMom] = useState("yo mama");
-  // const loggedIn = AuthService.loggedIn();
-
-  // if (!loggedIn) {
-  //   return (
-  //     <header id={id}>
-  //       <a href="/">
-  //         <h1>credible</h1>
-  //       </a>
-  //       <ul>
-  //         <li>
-  //           <a href="/signup">Signup</a>
-  //         </li>
-  //       </ul>
-  //     </header>
-  //   );
-  // }
-  console.log(userData);
   const points = userData?.me?.points || "I am running a naked mile.";
-
   const navOut = async (event) => {
     event.preventDefault();
     setOpen(false);
     AuthService.logout();
   };
-
   return (
     <header id={id} className="home-header">
-      <a href="/" id="nav-header">
+      <a href="/" id="nav-header" onClick={()=>setStoreState(false)}>
         <h1>credible</h1>
       </a>
       <ul>
@@ -57,7 +37,7 @@ function Nav({ id, userData }) {
         </li>
         <li>{points} credits</li>
         <li>
-          <button type="button">
+          <button type="button" onClick={() => setStoreState(true)}>
             <h2>Buy Credits!</h2>
           </button>
         </li>
