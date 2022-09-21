@@ -4,6 +4,7 @@ const {
 } = require("apollo-server-express");
 const { User, Thought } = require("../models");
 const { signToken } = require("../utils/auth");
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
@@ -165,6 +166,52 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    checkout: async(parent, args, context) => {
+      const url = new URL(context.headers.referer || context.headers.origin).origin;
+      //generate product id
+      const product = await stripe.products.create({
+        name: "credits",
+        description: args.credits || "credits",
+        images: [`${url}/static/media/gold2.bde56015.png`]
+      });
+
+      //generate price id using the product id
+      const price = await stripe.prices.create({
+        product: product.id,
+        unit_amount: args.price * 100,
+        currency: 'usd',
+      });
+
+      const session = await stripe.checkout.sessions.create({
+        line_items: [
+          {
+            // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+            price: price.id,
+            quantity: 1,
+          },
+        ],
+        mode: 'payment',
+        success_url: `${url}/checkoutsuccess?success=true`,
+        cancel_url: `${url}/checkoutsuccess?canceled=true`,
+      });
+      return{ session: session.id };
+    },
+    // buy credits
+    recharge: async (parent, {point}, context) => {
+      if (context.user) {
+console.log(point);
+        // user points + credits
+        const updatedUser = await User.findOneAndUpdate(
+            {_id: context.user._id},
+            {$inc: {points: point}},
+            {new: true}
+        );
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    }
   },
 };
 
