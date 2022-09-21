@@ -27,7 +27,7 @@
 
 ## Installation
 
-In order to install this project you must clone this project on to your local machine: (git@github.com:quicksilver524/credible.git)
+In order to install this project you must clone this project on to your local machine: [git@github.com:quicksilver524/credible.git]
 
 ## Usage
 
