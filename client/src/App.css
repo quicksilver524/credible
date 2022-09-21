@@ -157,7 +157,7 @@ li {
   position: relative;
   /* opacity: 10%; */
 }
-
+/* 
 @keyframes fadeInAnimation {
   from {
     opacity: 0;
@@ -165,11 +165,11 @@ li {
   to {
     opacity: 55%;
   }
-}
+} */
 #credibleWord {
   animation: fadeInAnimation 10s;
   max-height: 180px;
-  opacity: 55%;
+  /* opacity: 55%; */
 }
 #signup-container {
   padding: 50px;
@@ -200,8 +200,8 @@ li {
   box-shadow: 2px 2px 2px 2px var(--color3);
 }
 #login-btn-yes {
-  background-color: var(--color4);
-  opacity: 80%;
+  /* background-color: var(--color4); */
+  /* opacity: 80%; */
   color: black;
   font-size: large;
   min-width: 200px;
