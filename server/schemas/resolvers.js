@@ -72,7 +72,7 @@ const resolvers = {
         if (diff > 5) {
           user.points += 5;
         } else {
-          user.points += 1;
+          user.points += 2;
         }
         console.log(diff);
       }
