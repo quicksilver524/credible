@@ -7,11 +7,13 @@
 
 ## Description
 
+  credible is a light-weight social networking site aimed at changing the way one communicates through purchacing credits earned through signing up, likes received through posts made and when directly purchacing credits. Credits function as the means to purchace a posting space. Without credits one cannot post anything or add additional comments to posts made. The goals is to make social communication focused on what one wants to say while providing value to those words shared. 
+
 ## Table of Contents
 
+- [Walkthrough-Video](#Walkthrough-Video)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Walkthrough-Video](#Walkthrough-Video)
 - [Instructions](#instructions)
 - [Website-heroku-deployment](#Website-heroku-deployment)
 - [Created by](#Created-by)
@@ -25,23 +27,25 @@
 
 ## Installation
 
-In order to install this project you must clone this project on to your local machine.
+In order to install this project you must clone this project on to your local machine: [git@github.com:quicksilver524/credible.git]
 
 ## Usage
+
+  One has the ability to purchace credits to post losing one credit to each post and or comments to posts. One acquires additional credits through liked posts and purchacing directly.
 
 ## Instructions
 
 - Step 1: Clone this repository
 
-* ![step-1]()
+* ![step-1](images/step-1.png)
 
 - Step 2: Install dependencies with 'npm install'
 
-* ![step-2]()
+* ![step-2](images/step-2.png)
 
 - Step 3: Type code .
 
-* ![step-3]()
+* ![step-3](images/step-4.png)
 
 ## Website-heroku-deployment
 
