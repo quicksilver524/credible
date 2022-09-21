@@ -10,7 +10,7 @@ function Post() {
   return (
     <div className="card-container">
       {posts.map((post) => (
-        <div className="card">
+        <div className="card" key={post._id}>
           <h3>{post.username}</h3>
           <p>{post.createdAt}</p>
           <p>{post.thoughtText}</p>

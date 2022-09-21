@@ -4,9 +4,7 @@ import Login from "../components/Login";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import credibleWord from "../images/signupCredible1.png";
-
 import AuthService from "../utils/auth";
-
 import { Button, Form, Image } from "semantic-ui-react";
 
 function Signup() {
@@ -31,7 +29,7 @@ function Signup() {
       if (!e.target.value.length) {
         setFormErrorMessage(`${e.target.name} is required!`);
       } else {
-        setFormState({...formState, [e.target.name]: e.target.value });
+        setFormState({ ...formState, [e.target.name]: e.target.value });
       }
     }
   }
@@ -54,18 +52,23 @@ function Signup() {
   return (
     <main id="sign-up-background">
       <div id="signup-container">
-        <Form container stackable onSubmit={handleFormSubmit} id="signup-form">
+        <Form
+          container="true"
+          stackable="true"
+          onSubmit={handleFormSubmit}
+          id="signup-form"
+        >
           <header>
             <a href="/">
               <h1>join credible</h1>
             </a>
           </header>
 
-          <Form.Group widths="spread-evenly">
+          <Form.Group widths="equal">
             <Form.Field>
-              <label for="username">username: </label>
+              <label htmlFor="username">username: </label>
               <input
-                class="signup-input"
+                className="signup-input"
                 name="username"
                 type="text"
                 id="username"
@@ -74,9 +77,9 @@ function Signup() {
               />
             </Form.Field>
             <Form.Field>
-              <label for="email">email: </label>
+              <label htmlFor="email">email: </label>
               <input
-                class="signup-input"
+                className="signup-input"
                 name="email"
                 type="email"
                 id="email"
@@ -85,9 +88,9 @@ function Signup() {
               />
             </Form.Field>
             <Form.Field>
-              <label for="password">password: </label>
+              <label htmlFor="password">password: </label>
               <input
-                class="signup-input"
+                className="signup-input"
                 name="password"
                 type="password"
                 id="password"
