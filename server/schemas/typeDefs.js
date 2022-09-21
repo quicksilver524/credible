@@ -50,6 +50,9 @@ const typeDefs = gql`
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
     addFriend(friendId: ID!): User
   }
+  type Checkout {
+    session: ID
+  }
 `;
 
 module.exports = typeDefs;
