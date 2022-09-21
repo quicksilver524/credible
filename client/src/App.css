@@ -163,13 +163,13 @@ li {
     opacity: 0;
   }
   to {
-    opacity: 50%;
+    opacity: 55%;
   }
 }
 #credibleWord {
   animation: fadeInAnimation 10s;
   max-height: 180px;
-  opacity: 50%;
+  opacity: 55%;
 }
 #signup-container {
   padding: 50px;
