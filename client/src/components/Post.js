@@ -6,15 +6,14 @@ import {
   DISLIKE_THOUGHT,
   ADD_REACTION,
 } from "../utils/mutations";
+import CommentSection from "./Comment";
 
 function Post() {
   const { loading, data } = useQuery(QUERY_POSTS);
   const posts = data?.thoughts || [];
-  const likeCount = data?.likeCount || 0;
   const [likeThought, { likeError }] = useMutation(LIKE_THOUGHT);
   const [dislikeThought, { dislikeError }] = useMutation(DISLIKE_THOUGHT);
   const [addReaction, { reactionError }] = useMutation(ADD_REACTION);
-  const [commentText, setCommentText] = useState("");
 
   const handleLikeClick = async (e) => {
     try {
@@ -35,25 +34,6 @@ function Post() {
     } catch (err) {
       console.error(err);
     }
-  };
-
-  const handleCommentSubmit = async (e) => {
-    try {
-      console.log(e.target.id);
-      await addReaction({
-        variables: {
-          thoughtId: e.target.id.substring(3),
-          reactionBody: commentText,
-        },
-      });
-      window.location.reload();
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const handleCommentFormChange = async (e) => {
-    setCommentText(e.target.value);
   };
 
   return (
@@ -84,30 +64,7 @@ function Post() {
               >
                 dislike
               </button>
-            </div>
-          </div>
-          <div className="comment-container">
-            {post.reactions.map((comment) => (
-              <div key={comment._id} className="comment-card">
-                <h4>{comment.username}</h4>
-                <p>{comment.reactionBody}</p>
-              </div>
-            ))}
-            <div className="comment-create-container">
-              <textarea
-                placeholder="comment goes here!"
-                value={commentText}
-                className="form-input thought-text-input"
-                onChange={handleCommentFormChange}
-              ></textarea>
-              <button
-                type="button"
-                className="like-btn comment-btn"
-                onClick={handleCommentSubmit}
-                id={`id_${post._id}`}
-              >
-                comment
-              </button>
+              <CommentSection addReaction={addReaction} post={post} />
             </div>
           </div>
         </div>
